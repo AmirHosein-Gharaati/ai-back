@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-class Reader:
+class DataReader:
 
     def __init__(self, filepath: str, result_label: str):
         self.dataframe = pd.read_csv(filepath)

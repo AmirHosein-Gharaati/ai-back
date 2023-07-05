@@ -1,6 +1,6 @@
 import numpy as np
 
-from Reader.Reader import Reader
+from Reader.DataReader import DataReader
 from learning.DataCleaner import DataCleaner
 from learning.DataSplitter import DataSplitter
 from logisticRegression.LogisticRegression import LogisticRegression
@@ -10,7 +10,7 @@ class Learn:
 
     def __init__(
             self,
-            reader: Reader,
+            reader: DataReader,
             data_cleaner: DataCleaner,
             data_splitter: DataSplitter,
             logistic_regression: LogisticRegression
@@ -31,7 +31,7 @@ class Learn:
         accuracy = np.sum(y_pred == y_test) / len(y_test)
         print('Accuracy:', accuracy)
 
-    def set_reader(self, new_reader: Reader):
+    def set_reader(self, new_reader: DataReader):
         self.reader = new_reader
 
     def predict(self):
