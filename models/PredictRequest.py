@@ -8,5 +8,5 @@ class PredictRequest(BaseModel):
     skinThickness: float
     insulin: float
     BMI: float
-    diabetesPedigreeFunction: int
+    diabetesPedigreeFunction: float
     age: int

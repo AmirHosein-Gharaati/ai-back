@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 from Reader.DataReader import DataReader
 from learning.DataCleaner import DataCleaner
@@ -8,6 +9,14 @@ from logisticRegression.LogisticRegression import LogisticRegression
 from models.PredictRequest import PredictRequest
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 learner = Learn(
     reader=DataReader('data/diabetes2.csv', 'Outcome'),

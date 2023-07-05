@@ -55,12 +55,20 @@ class Learn:
             "Age": [data.age]
         }
 
-        df = pd.DataFrame(data)
-        df = self.data_cleaner.transform(df)
+        df = pd.DataFrame(data, columns=[
+            "Pregnancies",
+            "Glucose",
+            "BloodPressure",
+            "SkinThickness",
+            "Insulin",
+            "BMI",
+            "DiabetesPedigreeFunction",
+            "Age"
+        ])
 
-        y_pred = self.model.predict(df)
+        result = self.model.predict(df)
 
-        message = "Diabetic" if y_pred[0] else "Non-Diabetic"
+        message = "Diabetic" if result[0] == 1 else "Non-Diabetic"
         return {
             "message": message
         }
