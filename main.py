@@ -8,14 +8,15 @@ from logisticRegression.LogisticRegression import LogisticRegression
 
 app = FastAPI()
 
+learner = Learn(
+    reader=Reader('data/diabetes2.csv', 'Outcome'),
+    data_cleaner=DataCleaner(),
+    data_splitter=DataSplitter(test_size=0.2, random_state=0),
+    logistic_regression=LogisticRegression()
+)
+
+learner.learn()
 
 @app.get("/")
 async def root():
-    reader = Reader('data/diabetes2.csv', 'Outcome')
-    data_splitter = DataSplitter(test_size=0.2, random_state=0)
-
-    data_cleaner = DataCleaner()
-    logistic_regression = LogisticRegression()
-
-    learner = Learn(reader, data_cleaner, data_splitter, logistic_regression)
-    learner.learn()
+    return "Hello World"

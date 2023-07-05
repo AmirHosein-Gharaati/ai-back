@@ -31,5 +31,8 @@ class Learn:
         accuracy = np.sum(y_pred == y_test) / len(y_test)
         print('Accuracy:', accuracy)
 
+    def set_reader(self, new_reader: Reader):
+        self.reader = new_reader
+
     def predict(self):
         pass
