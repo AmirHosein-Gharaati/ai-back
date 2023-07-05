@@ -25,17 +25,10 @@ learner = Learn(
     logistic_regression=LogisticRegression()
 )
 
-learner.learn()
-
 
 @app.get("/")
 async def root():
     return "Hello World"
-
-
-@app.get("/columns")
-async def get_columns():
-    return learner.get_reader().get_X().columns.values.tolist()
 
 
 @app.post("/predict")
