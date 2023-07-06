@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from Reader.DataReader import DataReader
+from reader.DataReader import DataReader
 from learning.DataCleaner import DataCleaner
 from learning.DataSplitter import DataSplitter
 from learning.Learn import Learn
@@ -24,6 +24,8 @@ learner = Learn(
     data_splitter=DataSplitter(test_size=0.2, random_state=0),
     logistic_regression=LogisticRegression()
 )
+
+learner.learn()
 
 
 @app.get("/")

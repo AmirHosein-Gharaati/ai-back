@@ -1,11 +1,11 @@
-import numpy as np
 import pandas as pd
 
-from Reader.DataReader import DataReader
 from learning.DataCleaner import DataCleaner
 from learning.DataSplitter import DataSplitter
 from logisticRegression.LogisticRegression import LogisticRegression
+from metrics.Metrics import calculate_metrics
 from models.PredictRequest import PredictRequest
+from reader.DataReader import DataReader
 
 
 class Learn:
@@ -30,11 +30,8 @@ class Learn:
         self.model.fit(x_train, y_train)
 
         y_pred = self.model.predict(x_test)
-        accuracy = np.sum(y_pred == y_test) / len(y_test)
 
-        return {
-            "accuracy": accuracy
-        }
+        return calculate_metrics(y_test, y_pred)
 
     def set_reader(self, new_reader: DataReader):
         self.reader = new_reader
