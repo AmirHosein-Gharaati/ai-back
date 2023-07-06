@@ -2,6 +2,8 @@
 
 ## Description
 
+**Checkout project documentation [here](./docs/Project proposal.pdf)**
+
 This project aims to develop a predictive model for diabetes using logistic regression, a popular machine learning algorithm. The project consists of three phases.
 
 Phase One: Data Preparation
@@ -13,9 +15,19 @@ The second phase involves training the logistic regression model using the prepa
 Phase Three: Developing a User Interface for Diabetes Prediction
 In the third phase, a user interface is developed to allow users to input their features. The trained logistic regression model predicts whether the user is diabetic or non-diabetic based on the provided features.
 
-Note: It is required to implement the logistic regression algorithm without using pre-existing libraries.
+**Note**: It is required to implement the logistic regression algorithm without using pre-existing libraries.
 
 Overall, this project aims to develop a logistic regression model for diabetes prediction and provide a user-friendly interface for individuals to assess their likelihood of being diabetic based on their personal features.
+
+
+## Flow
+
+The overall flow is the same as mentioned in Description section.
+
+1. The test and train data will split
+2. A pre process of standardization applies on data
+3. Model of Logistic-Regression will create based on data
+4. The prediction phase is ready
 
 ## Installation
 
