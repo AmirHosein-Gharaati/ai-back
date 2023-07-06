@@ -2,7 +2,7 @@
 
 ## Description
 
-**Checkout project documentation [here](docs/Project proposal.pdf)**
+Checkout project documentation [here](docs/Project-proposal.pdf)
 
 This project aims to develop a predictive model for diabetes using logistic regression, a popular machine learning algorithm. The project consists of three phases.
 
